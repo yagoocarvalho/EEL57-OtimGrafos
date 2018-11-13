@@ -26,6 +26,17 @@ namespace Otim_Grafos
             Log ("Loading graph instance");
             WeightedGraph graph = new WeightedGraph (_graphInstancePath);
 
+            // Solve using bruteforce
+            List<Vertex> visited    = new List<Vertex> ();
+            List<Vertex> notVisited = graph.GetVertices ();
+            WeightedGraph ansGraph  = new WeightedGraph ();
+            // Visit every vertex and 
+            foreach (Vertex vertex in notVisited)
+            {
+
+                ansGraph.AddEdge ();
+            }
+
             // Solve using backtrack
             //var answer = BackTrack ();
             // Solve using Branch & Bound
