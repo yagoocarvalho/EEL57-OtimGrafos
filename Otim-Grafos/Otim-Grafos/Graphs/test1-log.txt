@@ -1,0 +1,86 @@
+28/11/2018 01:21:41	Loading graph instance
+28/11/2018 01:21:41	current weight: 0
+28/11/2018 01:21:41	candidate weight: 3
+28/11/2018 01:21:41	Candidate is the new max clique! Weight: 3. Clique: [0, 1, 2]
+28/11/2018 01:21:41	================================================
+28/11/2018 01:21:41	current weight: 3
+28/11/2018 01:21:41	candidate weight: 4
+28/11/2018 01:21:41	Candidate is the new max clique! Weight: 4. Clique: [1, 2, 3, 4]
+28/11/2018 01:21:41	================================================
+28/11/2018 01:21:41	current weight: 4
+28/11/2018 01:21:41	candidate weight: 2
+28/11/2018 01:21:41	================================================
+28/11/2018 01:21:41	current weight: 4
+28/11/2018 01:21:41	candidate weight: 5
+28/11/2018 01:21:41	Candidate is the new max clique! Weight: 5. Clique: [5, 6, 7, 8, 9]
+28/11/2018 01:21:41	================================================
+28/11/2018 01:21:41	Max Clique: [f, g, h, i, j]
+28/11/2018 01:21:41	Max Clique Weight: 5
+28/11/2018 01:21:41	Number of Backtrack calls: 52
+28/11/2018 01:21:41	Optmized Backtrack: False
+28/11/2018 01:21:41	End!
+28/11/2018 01:21:47	Loading graph instance
+28/11/2018 01:21:47	current weight: 0
+28/11/2018 01:21:47	candidate weight: 3
+28/11/2018 01:21:47	Candidate is the new max clique! Weight: 3. Clique: [0, 1, 2]
+28/11/2018 01:21:47	================================================
+28/11/2018 01:21:47	current weight: 3
+28/11/2018 01:21:47	candidate weight: 4
+28/11/2018 01:21:47	Candidate is the new max clique! Weight: 4. Clique: [1, 2, 3, 4]
+28/11/2018 01:21:47	================================================
+28/11/2018 01:21:47	current weight: 4
+28/11/2018 01:21:47	candidate weight: 5
+28/11/2018 01:21:47	Candidate is the new max clique! Weight: 5. Clique: [5, 6, 7, 8, 9]
+28/11/2018 01:21:47	================================================
+28/11/2018 01:21:47	Max Clique: [f, g, h, i, j]
+28/11/2018 01:21:47	Max Clique Weight: 5
+28/11/2018 01:21:47	Number of Backtrack calls: 30
+28/11/2018 01:21:47	Optmized Backtrack: True
+28/11/2018 01:21:47	End!
+28/11/2018 19:57:09	Loading graph instance
+28/11/2018 23:12:05	Loading graph instance
+28/11/2018 23:17:11	Loading graph instance
+28/11/2018 23:21:10	Loading graph instance
+28/11/2018 23:37:36	Loading graph instance
+29/11/2018 00:18:20	Loading graph instance
+29/11/2018 00:25:28	Loading graph instance
+29/11/2018 00:28:26	Loading graph instance
+29/11/2018 00:40:57	Loading graph instance
+29/11/2018 00:45:57	Loading graph instance
+29/11/2018 00:54:04	Max Clique: [j, f, g, h, i]
+29/11/2018 00:54:04	Max Clique Weight: 5
+29/11/2018 00:54:07	End!
+29/11/2018 01:30:48	Loading graph instance
+29/11/2018 01:30:48	current weight: 0
+29/11/2018 01:30:48	candidate weight: 3
+29/11/2018 01:30:48	================================================
+29/11/2018 01:30:48	current weight: 3
+29/11/2018 01:30:48	candidate weight: 4
+29/11/2018 01:30:48	================================================
+29/11/2018 01:30:48	current weight: 4
+29/11/2018 01:30:48	candidate weight: 4
+29/11/2018 01:30:48	================================================
+29/11/2018 01:30:48	current weight: 4
+29/11/2018 01:30:48	candidate weight: 2
+29/11/2018 01:30:48	================================================
+29/11/2018 01:30:48	current weight: 4
+29/11/2018 01:30:48	candidate weight: 4
+29/11/2018 01:30:48	================================================
+29/11/2018 01:30:48	current weight: 4
+29/11/2018 01:30:48	candidate weight: 2
+29/11/2018 01:30:48	================================================
+29/11/2018 01:30:48	current weight: 4
+29/11/2018 01:30:48	candidate weight: 5
+29/11/2018 01:30:48	================================================
+29/11/2018 01:30:48	current weight: 5
+29/11/2018 01:30:48	candidate weight: 5
+29/11/2018 01:30:48	================================================
+29/11/2018 01:30:48	current weight: 5
+29/11/2018 01:30:48	candidate weight: 5
+29/11/2018 01:30:48	================================================
+29/11/2018 01:30:48	current weight: 5
+29/11/2018 01:30:48	candidate weight: 5
+29/11/2018 01:30:48	================================================
+29/11/2018 01:30:48	Max Clique: [j, f, g, h, i]
+29/11/2018 01:30:48	Max Clique Weight: 5
+29/11/2018 01:30:48	End!
