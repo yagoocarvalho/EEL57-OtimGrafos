@@ -9,24 +9,28 @@ namespace Otim_Grafos
 {
     public class WeightedGraph
     {
-        public Dictionary<int, Dictionary<int, int>> Edges         { get; set; }
-        public Dictionary<string, int>               VertexLabelMap { get; set; }
-        public Dictionary<int, string>               VertexIndexMap { get; set; }
-
+        public Dictionary<int, HashSet<int>>        Edges           { get; set; } // <vertexIndex, listOfNeighbors>
+        public Dictionary<int, int>                 Vertices        { get; set; } // <vertexIndex, vertexWeight>
+        public Dictionary<string, int>              VertexLabelMap  { get; set; } // <vertexLabel, vertexIndex>
+        public Dictionary<int, string>              VertexIndexMap  { get; set; } // <vertexIndex, vertexLabel>
+        public int                                  GraphWeight     { get; set; }
 
         public WeightedGraph(string path)
         {
-            VertexLabelMap = new Dictionary<string, int> ();
-            VertexIndexMap = new Dictionary<int, string> ();
-            Edges          = new Dictionary<int, Dictionary<int, int>> ();
+            VertexLabelMap  = new Dictionary<string, int> ();
+            VertexIndexMap  = new Dictionary<int, string> ();
+            Edges           = new Dictionary<int, HashSet<int>> ();
+            Vertices        = new Dictionary<int, int> ();
             LoadGraph (path);
         }
 
         public WeightedGraph()
         {
-            VertexLabelMap = new Dictionary<string, int> ();
-            VertexIndexMap = new Dictionary<int, string> ();
-            Edges = new Dictionary<int, Dictionary<int, int>> ();
+            VertexLabelMap  = new Dictionary<string, int> ();
+            VertexIndexMap  = new Dictionary<int, string> ();
+            Edges           = new Dictionary<int, HashSet<int>> ();
+            Vertices        = new Dictionary<int, int> ();
+            GraphWeight     = 0;
         }
 
         private void LoadGraph (string path)
@@ -38,11 +42,25 @@ namespace Otim_Grafos
                 // Load line
                 string[] splittedLine = line.Split ();
 
-                AddEdge (splittedLine[0], splittedLine[1], splittedLine[2]);
+                if (splittedLine[0] == "n")
+                {
+                    // Create node map
+                    if (!VertexLabelMap.ContainsKey (splittedLine[1]))
+                    {
+                        VertexLabelMap.Add (splittedLine[1], VertexLabelMap.Count);
+                        VertexIndexMap.Add (VertexIndexMap.Count, splittedLine[1]);
+                    }
+
+                    Vertices.Add (VertexLabelMap[splittedLine[1]], int.Parse (splittedLine[2]));
+                }
+                else if (splittedLine[0] == "e")
+                {
+                    AddEdge (splittedLine[1], splittedLine[2]);
+                }
             }
         }
 
-        public void AddEdge (string v1Label, string v2Label, string edgeWeight)
+        public void AddEdge (string v1Label, string v2Label)
         {
             // Create node map
             if (!VertexLabelMap.ContainsKey (v1Label))
@@ -58,29 +76,20 @@ namespace Otim_Grafos
                 VertexIndexMap.Add (VertexIndexMap.Count, v2Label);
             }
 
-            // Add edge
+            // Add edge and vertices
             if (!Edges.ContainsKey (VertexLabelMap[v1Label]))
             {
-                Edges.Add (VertexLabelMap[v1Label], new Dictionary<int, int> ());
+                Edges.Add (VertexLabelMap[v1Label], new HashSet<int>());
+                GraphWeight += Vertices[VertexLabelMap[v1Label]];
             }
             if (!Edges.ContainsKey (VertexLabelMap[v2Label]))
             {
-                Edges.Add (VertexLabelMap[v2Label], new Dictionary<int, int> ());
+                Edges.Add (VertexLabelMap[v2Label], new HashSet<int> ());
+                GraphWeight += Vertices[VertexLabelMap[v2Label]];
             }
 
-            Edges[VertexLabelMap[v2Label]].Add (VertexLabelMap[v1Label], int.Parse (edgeWeight));
-            Edges[VertexLabelMap[v1Label]].Add (VertexLabelMap[v2Label], int.Parse (edgeWeight));
-        }
-
-        public List<Vertex> GetVertices ()
-        {
-            List<Vertex> vertices = new List<Vertex>();
-            foreach (int vertexIndex in Edges.Keys)
-            {
-                vertices.Add (new Vertex(vertexIndex, VertexIndexMap[vertexIndex]));
-            }
-
-            return vertices;
+            Edges[VertexLabelMap[v2Label]].Add (VertexLabelMap[v1Label]);
+            Edges[VertexLabelMap[v1Label]].Add (VertexLabelMap[v2Label]);
         }
     }
 }
